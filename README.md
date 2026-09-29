@@ -1,44 +1,83 @@
-# Ad Verification by Country with Magnetic Proxy | Agent Skill
+# Ad Verification by Country and Landing Page QA with Magnetic Proxy
 
-A regional QA matrix with observed exit, preview reference, final URL, redirect path, locale, offer and reproducible discrepancies.
+A regional QA matrix with observed exit, preview reference, final URL, redirect path, locale, offer and reproducible discrepancies. This Agent Skill helps **advertisers and agencies checking campaigns they own or are authorized to audit** prepare an evidence-based result using Magnetic Proxy for authorized residential routing and regional observations.
 
-**Status:** Public review version; authenticated product QA is pending.
 
-## Why this workflow uses Magnetic Proxy
 
-Magnetic Proxy is the live geographic route for the landing and redirect check. Inspect the current account and choose the available General Purpose Premium Capsule recommended for campaign QA, or another suitable current Capsule if the account differs. Use the main [Magnetic Proxy product skill](https://github.com/MagneticProxy/magneticproxy-residential-proxy-agent-skills/tree/main/skills/magneticproxy) or [official documentation](https://www.magneticproxy.com/documentation) for connection setup. Verify the exit country in the same browser/profile before the test. A proxy observation is one vantage point, not proof of ad delivery or fraud. If account access or exit validation is missing, provide the QA plan and mark regional execution pending.
+## What you get
 
-## Example request and result
+- Check regional landing redirects, language and advertised offer
+- Compare authorized creative previews with the destination experience
+- Give agencies reproducible defects by market and creative version
 
-> Check our approved campaign preview and the landing page for US, Mexico and Spain. The Spanish market should show Spanish copy and the EUR offer.
+Start with [the worked example](skills/ad-verification-by-country/references/worked-example.md), the [deliverable template](skills/ad-verification-by-country/assets/deliverable-template.md) and the [output columns](skills/ad-verification-by-country/assets/output.csv).
 
-**Illustrative result, not a live run:** QA matrix: Spain exit verified; landing redirected to English/USD page twice, severity medium, with timestamp and final URL. The ad creative was checked through the supplied preview. No live paid ad was clicked; delivery volume was not assessed.
+## Install and start
 
-## Install
+Copy this prompt into an agent that supports skill installation:
+
+> Review and install `ad-verification-by-country` from https://github.com/MagneticProxy/magneticproxy-ad-verification-by-country-skill and the `magneticproxy` product skill from https://github.com/MagneticProxy/magneticproxy-residential-proxy-agent-skills. Confirm which files were installed and whether you can operate my browser or product account. Help me with: [my task]. Use existing capacity first; guide signup or recommend a suitable current plan when needed, and obtain my approval before a paid purchase. Start with a bounded sample and show the observed results and unresolved work.
+
+Or use the Skills CLI from your project folder:
 
 ```bash
 npx skills add MagneticProxy/magneticproxy-ad-verification-by-country-skill --skill ad-verification-by-country
-```
-
-For an agent that supports installing skills: “Install `ad-verification-by-country` from https://github.com/MagneticProxy/magneticproxy-ad-verification-by-country-skill, confirm installation, then help with my authorized task. Show evidence and unresolved states.”
-
-
-The [skill instructions](skills/ad-verification-by-country/SKILL.md) are the canonical package. Installing them does not authenticate into the product or grant rights to third-party data.
-
-## Recommended product skill
-
-For full product operation, install the companion brand skill too:
-
-```bash
 npx skills add MagneticProxy/magneticproxy-residential-proxy-agent-skills --skill magneticproxy
 ```
 
-The use-case skill defines the job and output; the brand skill helps configure and use the actual product.
+Select your agent when prompted. For a non-interactive installation, add the appropriate agent flag, for example `--agent codex` or `--agent claude-code`. Review installed instructions and scripts before running them. Installation does not grant browser tools, credentials or a subscription. A plain chat can read the instructions but may not install or operate the product.
 
-## Access and review
+The complete skill folder is the canonical package, including references and templates. A lone downloaded `SKILL.md` omits those files; use the repository installation or copy the complete folder into your agents supported skills directory. An MCP is not required or assumed.
+
+## From install to first useful result
+
+1. **Install and connect.** Install this skill and the `magneticproxy` product skill. Confirm your agent has browser/computer control or an authorized proxy client; installation alone provides no account access.
+2. **Log in or sign up.** Open [Magnetic Proxy](https://app.magneticproxy.com/#/my-proxies). Reuse your account; otherwise use the visible Sign up flow. Complete authentication yourself without pasting credentials into the conversation.
+3. **Choose capacity for the job.** Inspect available Capsules and GB. For ongoing offer monitoring, assess Price Monitoring; for authorized campaign landing QA, assess General Purpose Premium. Start with existing suitable capacity. If capacity is insufficient, compare [current plans](https://www.magneticproxy.com/pricing) and recommend the smallest suitable option from observed pilot usage. Follow its current Choose Plan checkout link; do not hardcode a price, discount or checkout token.
+4. **Approve any purchase.** Show Capsule, capacity, billing period and current cost before purchase. Continue paid checkout only when the user explicitly authorizes that transaction. A skill installation is not purchase approval.
+5. **Prove the route.** Configure the current product, verify the exit in the same browser/client and run a bounded permitted sample. Expand only within the agreed scope. If the approved data route does not need a proxy, explain that and do not invent a purchase requirement.
+
+## Try this task
+
+> Check our approved campaign preview and the landing page for US, Mexico and Spain. The Spanish market should show Spanish copy and the EUR offer.
+
+**Bring:** Campaign ID, approved creative or preview URL, expected landing URL, markets, language, offer and permitted test method.
+
+**Illustrative result:** Report a reproducible landing-locale defect with creative version, final URL, time and evidence. Do not infer ad fraud or delivery share; no paid ad was clicked.
+
+Read the [complete workflow](skills/ad-verification-by-country/SKILL.md) for source access, execution and decision rules.
+
+## Common questions
+
+### Does ad verification require clicking live paid ads?
+
+No. Use approved preview/test methods and authorized destination URLs. This workflow does not generate paid impressions or clicks to test an advertisement.
+
+### Why use Magnetic Proxy here?
+
+Magnetic Proxy provides the configured geographic connection for permitted live regional checks. The skill adds comparable observations and a decision-ready deliverable. Supplied-data analysis can proceed without pretending that a live proxy check occurred.
+
+### Is signup or a paid plan required?
+
+An account is required to operate the product. Use available account capacity first. A paid plan is needed only when the requested operation requires capacity or features the account does not have; consult the current product pricing. Installing this repository does not start a paid subscription.
+
+### Has the live workflow been verified?
+
+Repository validation and installation checks cover packaging; the worked example uses synthetic inputs. A live workflow requires an authenticated account, an approved sample and an observed final result. See [QA and maintenance](QA.md) for the exact boundary.
+
+## Access and privacy
 
 Use an official ad preview/test method or a campaign asset supplied by the advertiser. Check the ad platform’s terms before any automated access. Do not generate impressions or click a live paid ad merely to test it; do not automate an ad library, bypass a challenge, or inspect private campaign data without the owner’s access. Stop on access denial, CAPTCHA, `403`, or `429`. Test owned or explicitly authorized destination URLs only.
 
-Reference: [Magnetic Proxy Ad Verification use case](https://www.magneticproxy.com/use-cases/ad-verification-proxies). Product landing: [https://www.magneticproxy.com/use-cases/ad-verification-proxies](https://www.magneticproxy.com/use-cases/ad-verification-proxies). The brand is not affiliated with third-party marketplaces or platforms mentioned here.
+## Related resources and support
 
-Before calling this workflow proven, run an authorized product sample with the actual account, reconcile the output, and confirm the requested deliverable. Keep real contact lists, credentials, and private client data out of GitHub.
+- [Magnetic Proxy product skill](https://github.com/MagneticProxy/magneticproxy-residential-proxy-agent-skills) for setup and product operation.
+- [Product use cases](https://www.magneticproxy.com/use-cases/ad-verification-proxies?utm_source=github&utm_medium=agent_skill&utm_campaign=ad-verification-by-country) for product context.
+- [Report a reproducible issue](https://github.com/MagneticProxy/magneticproxy-ad-verification-by-country-skill/issues) using redacted or synthetic examples. For account, billing or service issues, use support inside the product.
+- [Contribution guide](CONTRIBUTING.md) and [security guidance](SECURITY.md).
+
+This repository documents a specific task; it does not guarantee search rankings, AI citations, delivery, platform access or commercial results. Third-party names identify the workflow and do not imply endorsement.
+
+## License
+
+Original instructions and code are available under the [MIT License](LICENSE). Product subscriptions, service access and third-party data remain subject to their respective terms. This license does not grant trademark rights or permission to collect third-party content.

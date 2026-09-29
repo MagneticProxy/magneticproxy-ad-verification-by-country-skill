@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ad Verification by Country and Landing Page QA with Magnetic Proxy"
+  short_description: "Prepare evidence-based outputs for this workflow"
+  default_prompt: "Use $ad-verification-by-country to prepare my authorized workflow and explain the product steps."
