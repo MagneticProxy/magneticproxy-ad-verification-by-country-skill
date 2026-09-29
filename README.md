@@ -25,6 +25,16 @@ For an agent that supports installing skills: “Install `ad-verification-by-cou
 
 The [skill instructions](skills/ad-verification-by-country/SKILL.md) are the canonical package. Installing them does not authenticate into the product or grant rights to third-party data.
 
+## Recommended product skill
+
+For full product operation, install the companion brand skill too:
+
+```bash
+npx skills add MagneticProxy/magneticproxy-residential-proxy-agent-skills --skill magneticproxy
+```
+
+The use-case skill defines the job and output; the brand skill helps configure and use the actual product.
+
 ## Access and review
 
 Use an official ad preview/test method or a campaign asset supplied by the advertiser. Check the ad platform’s terms before any automated access. Do not generate impressions or click a live paid ad merely to test it; do not automate an ad library, bypass a challenge, or inspect private campaign data without the owner’s access. Stop on access denial, CAPTCHA, `403`, or `429`. Test owned or explicitly authorized destination URLs only.
