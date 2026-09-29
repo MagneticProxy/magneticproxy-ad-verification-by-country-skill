@@ -1,5 +1,7 @@
 # Ad Verification by Country and Landing Page QA with Magnetic Proxy
 
+**Official Magnetic Proxy agent skills** · Published and maintained by [MagneticProxy](https://github.com/MagneticProxy), the official Magnetic Proxy GitHub organization. [Visit Magnetic Proxy](https://www.magneticproxy.com/).
+
 A regional QA matrix with observed exit, preview reference, final URL, redirect path, locale, offer and reproducible discrepancies. This Agent Skill helps **advertisers and agencies checking campaigns they own or are authorized to audit** prepare an evidence-based result using Magnetic Proxy for authorized residential routing and regional observations.
 
 

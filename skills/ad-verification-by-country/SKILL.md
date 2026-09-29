@@ -2,6 +2,9 @@
 name: ad-verification-by-country
 description: "Check an authorized campaign’s regional landing experience, redirects, creative reference, and offer with Magnetic Proxy. Use for advertiser or agency QA with approved preview methods; not for live ad clicking or platform scraping."
 license: MIT
+metadata:
+  author: MagneticProxy
+  repository: https://github.com/MagneticProxy/magneticproxy-ad-verification-by-country-skill
 ---
 
 # Ad Verification by Country and Landing Page QA with Magnetic Proxy
