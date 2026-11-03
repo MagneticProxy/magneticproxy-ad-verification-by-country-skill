@@ -15,9 +15,11 @@ metadata:
 
 **Deliver:** A regional QA matrix with observed exit, preview reference, final URL, redirect path, locale, offer and reproducible discrepancies.
 
-## Product step
+## Start here: product setup is included
 
-For full account setup, recommend the companion `magneticproxy` product skill from https://github.com/MagneticProxy/magneticproxy-residential-proxy-agent-skills; this use-case skill still defines the research or QA output.
+Start this use case directly. Read [the included Magnetic Proxy onboarding](references/brand-onboarding.md) to reuse or prepare the official `magneticproxy` product skill in the same conversation, then continue this deliverable. Retain context already supplied and ask only for decisive missing information; do not send the user away to install another skill first.
+
+## Product step
 
 Magnetic Proxy is the live geographic route for the landing and redirect check. Inspect the current account and choose the available General Purpose Premium Capsule recommended for campaign QA, or another suitable current Capsule if the account differs. Use the main [Magnetic Proxy product skill](https://github.com/MagneticProxy/magneticproxy-residential-proxy-agent-skills/tree/main/skills/magneticproxy) or [official documentation](https://www.magneticproxy.com/documentation) for connection setup. Verify the exit country in the same browser/profile before the test. A proxy observation is one vantage point, not proof of ad delivery or fraud. If account access or exit validation is missing, provide the QA plan and mark regional execution pending.
 
